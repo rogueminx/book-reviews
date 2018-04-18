@@ -15,7 +15,7 @@ class UsersController < ApplicationController
       redirect_to user_books_path(@user)
       flash[:notice] = "Hello, #{@user.name} Id: #{@user.id}!"
     else
-      render :index
+      render :new
     end
   end
 
