@@ -1,0 +1,14 @@
+<%= form_for @book do |f| %>
+  <%= f.label :title %>
+  <%= f.text_field :title %>
+  <%= f.label :author %>
+  <%= f.text_field :author %>
+  <hr>
+  <%= f.label :genre %>
+  <%= f.select :genre, ['Non-Fiction', 'Literature', 'Mystery', 'Horror', 'Literature', 'Romance']%>
+  <hr>
+  <%= f.label :rating %>
+  <%= f.select :rating, [1, 2, 3, 4, 5]%>
+  <hr>
+  <%= f.submit %>
+<% end %>

@@ -1,0 +1,12 @@
+<div class="panel">
+  <% if object.errors.any? %>
+    <h1>ERRORS:</h1>
+    <ul>
+      <% object.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  <% end %>
+</div>
+
+<%= render "layouts/errors", :object => @book %>

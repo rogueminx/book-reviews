@@ -5,4 +5,10 @@ class Book < ActiveRecord::Base
   validates :title, :presence => true
   validates :author, :presence => true
   validates :rating, :presence => true
+  before_save :convert_to_integer
+
+private
+  def convert_to_integer
+    self.rating = rating.to_i 
+  end
 end
