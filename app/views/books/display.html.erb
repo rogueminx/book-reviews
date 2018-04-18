@@ -2,8 +2,18 @@
 <p>Author: <%= @book.author %></p>
 <p>Genre: <%= @book.genre %></p>
 <p>Rating: <%= @book.rating %></p>
-<hr>
 
+<hr>
+<h3>Reviews</h3>
+<% if @book.reviews.any? %>
+  <ul>
+  <% @reviews.each do |review| %>
+      <li><%= review.description %></li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>There are no reviews yet! </p>
+<% end %>
 <hr>
 
 <p><%= link_to "HOME", books_path %></p>
