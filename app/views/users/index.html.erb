@@ -1,3 +1,9 @@
 <h1>Welcome Bookworms!</h1>
 
-<h2>Hello!  Who are you?  Please enter your username:</h2>
+
+<% if @user == nil %>
+  <h2><%= link_to "Please Login! ", new_user_path %></h2>
+<% else %>
+  <h2>What would like to do today?</h2>
+
+<% end %>

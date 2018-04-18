@@ -1,6 +1,7 @@
 class BooksController < ApplicationController
   def index
     @books = Book.all
+    binding.pry
   end
 
   def show
@@ -10,11 +11,13 @@ class BooksController < ApplicationController
 
   def new
     @book = Book.new
+    @user = User.find(params[:user_id])
   end
 
   def create
     @book = Book.new(book_params)
-    
+    @user = User.find(params[:user_id])
+    binding.pry
     if @book.save
       flash[:notice] = "Your book was added to the list"
       redirect_to books_path
