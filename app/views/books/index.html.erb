@@ -4,5 +4,5 @@
 <hr>
 
 <% @books.each do |book| %>
-  <li><%= link_to book.title, book_path(book) %></li>
+  <li><%= link_to book.title, user_book_path(@user, book) %></li>
 <% end %>

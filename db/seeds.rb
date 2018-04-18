@@ -11,7 +11,7 @@ Review.destroy_all
     @rating = Faker::Number.between(1, 5)
     Book.create!(user_id: @user_id, title: @title, author: @author, rating: @rating)
     @book_id = Book.last.id
-    @description = Faker::Hipster.paragraphs
+    @description = Faker::Hipster.paragraph(10)
     Review.create!(user_id: @user_id, book_id: @book_id, description: @description)
   end
 end

@@ -14,6 +14,7 @@
 <% else %>
   <p>There are no reviews yet! </p>
 <% end %>
+<p><%= link_to "Add a Review", new_book_review_path(@user, @book) %></p>
 <hr>
 
 <p><%= link_to "HOME", books_path %></p>
