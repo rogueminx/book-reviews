@@ -2,7 +2,8 @@
 <hr>
 <%= link_to "Add new book", new_book_path %>
 <hr>
-
-<% @books.each do |book| %>
+Add toggle to filter feature (az, date, etc.)
+<hr>
+<% @azbooks.each do |book| %>
   <li><%= link_to book.title, book_path(book) %></li>
 <% end %>

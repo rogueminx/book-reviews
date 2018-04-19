@@ -1,6 +1,8 @@
 class BooksController < ApplicationController
   def index
     @books = Book.all
+    @azbooks = @books.sort_by {|obj| obj.title}
+    @datebooks = @books.sort_by {|obj| obj.date}
   end
 
   def show
@@ -48,6 +50,8 @@ class BooksController < ApplicationController
     @book.destroy
     redirect_to books_path
   end
+
+
 
 
 private
