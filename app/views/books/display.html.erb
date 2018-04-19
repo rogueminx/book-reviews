@@ -2,6 +2,7 @@
 <p>Author: <%= @book.author %></p>
 <p>Genre: <%= @book.genre %></p>
 <p>Rating: <%= @book.rating %></p>
+<p><%= link_to "Edit this Book", edit_book_path(@book) %></p>
 
 <hr>
 <h3>Reviews</h3>
@@ -13,8 +14,9 @@
   </ul>
 <% else %>
   <p>There are no reviews yet! </p>
+  <p><%= link_to "Add a Review", new_book_review_path(@book) %></p>
+
+  <hr>
 <% end %>
-<p><%= link_to "Add a Review", new_book_review_path(@book) %></p>
-<hr>
 
 <p><%= link_to "HOME", books_path %></p>
