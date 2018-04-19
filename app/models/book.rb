@@ -15,6 +15,10 @@ class Book < ActiveRecord::Base
     where(featured: false)
   end
 
+  def self.high_rating
+    where(rating: (4..5))
+  end
+
 
 private
   def convert_to_integer

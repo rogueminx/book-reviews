@@ -27,9 +27,9 @@ Things you may want to cover:
 - [x] As a user, I want to add a new item to the site so I can share a work that I have experienced.
 - [x] As a user, I want to be able to edit and delete works on the site so that information is correct and current.
 - [x] As a user, I want to be able to see all works alphabetically by name.
-- [ ] As a user, I want to see all works in order by creation date.
+- [x] As a user, I want to see all works in order by creation date.
 - [ ] As a user, I want to be able to see links on the homepage to the most popular filtered lists (for example: Most popular subgenres)
-- [ ] As a user, I want to be able to view a featured work on the home page that randomly changes each time I visit.
+- [x] As a user, I want to be able to view a featured work on the home page that randomly changes each time I visit.
 - [x] As a user, I want to be able to view each work individually to see all of its details.
 - [x] As a user, I want to be able to give each work a rating and see the average rating of all works. (partial)
 - [x] As a user, I want to be able to write my own opinion/review of each work.

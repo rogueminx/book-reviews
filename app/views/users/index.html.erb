@@ -5,7 +5,16 @@
   <h2><%= link_to "Please Login! ", new_user_path %></h2>
 
 <% end %>
+<hr>
+<h3>Here's our featured book! How exciting!</h3>
 
-<h3>Need inspiration to write a review, then see this review below</h3>
+<p>Book: <%= @book.title %></p>
+<p>Author: <%= @book.author %></p>
+<p>Genre: <%= @book.genre %></p>
+<p>Rating: <%= @book.rating %></p>
+<hr>
+<h3>Here's are our top rating books</h3>
+<% @rated.each do |book| %>
+<p><%= book.title %> (<%= book.rating %> out of 5 stars)</p>
 
-<h2>RANDO Book and book review</h2>
+<% end %>

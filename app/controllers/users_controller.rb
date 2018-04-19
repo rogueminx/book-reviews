@@ -1,5 +1,8 @@
 class UsersController < ApplicationController
   def index
+    @books = Book.featured
+    @book = @books.sample
+    @rated = Book.high_rating
     if @user
       @user = User.find(params[:user_id])
     end
