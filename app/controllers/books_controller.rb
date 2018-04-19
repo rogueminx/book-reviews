@@ -6,8 +6,9 @@ class BooksController < ApplicationController
 
   def show
     @book = Book.find(params[:id])
+    user_id = @book.user_id
     @reviews = @book.reviews
-    @user = User.find(params[:user_id]) #this may be needed to route the user info to the create a new review page.
+    @user = User.find(user_id) #this may be needed to route the user info to the create a new review page.
     render :display
   end
 
