@@ -6,15 +6,27 @@
 
 <% end %>
 <hr>
-<h3>Here's our featured book! How exciting!</h3>
-
-<p>Book: <%= @book.title %></p>
-<p>Author: <%= @book.author %></p>
-<p>Genre: <%= @book.genre %></p>
-<p>Rating: <%= @book.rating %></p>
+<% if @book != nil %>
+  <h3>Here's our featured book! How exciting!</h3>
+  <p>Book: <%= @book.title %></p>
+  <p>Author: <%= @book.author %></p>
+  <p>Genre: <%= @book.genre %></p>
+  <p>Rating: <%= @book.rating %></p>
+<% end %>
 <hr>
-<h3>Here's are our top rating books</h3>
-<% @rated.each do |book| %>
-<p><%= book.title %> (<%= book.rating %> out of 5 stars)</p>
-
+<% if @rated.any? %>
+  <h3>Here's are our top rating books</h3>
+  <% @rated.each do |book| %>
+  <p><%= book.title %> (<%= book.rating %> out of 5 stars)</p>
+  <% end %>
+<% end %>
+<hr>
+<% if @most_reviewed.any? %>
+  <h3>Here's are our most reviewed books</h3>
+  <% @most_reviewed.each do |review| %>
+  <h4><%= review.title %>, <%= review.author %></h4>
+    <% review.reviews.each do |review| %>
+    <p><%= review.description %></p>
+    <% end %>
+  <% end %>
 <% end %>

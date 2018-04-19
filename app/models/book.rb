@@ -7,18 +7,19 @@ class Book < ActiveRecord::Base
   validates :rating, :presence => true
   before_save :convert_to_integer
 
-  def self.featured
-    where(featured: true)
-  end
+  scope :featured, -> { where("featured =?", true)}
 
-  def self.not_featured
-    where(featured: false)
-  end
+  scope :not_featured, -> { where("featured =?", false)}
 
-  def self.high_rating
-    where(rating: (4..5))
-  end
+  scope :high_rating, -> { where("rating >=?", 4).order("rating DESC")}
 
+  scope :most_reviews, -> {(
+    select("books.id, books.title, books.author, books.genre, books.rating, count(reviews.id) as reviews_count")
+    .joins(:reviews)
+    .group("books.id")
+    .order("reviews_count DESC")
+    .limit(5)
+    )}
 
 private
   def convert_to_integer

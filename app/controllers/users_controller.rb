@@ -1,8 +1,9 @@
 class UsersController < ApplicationController
   def index
-    @books = Book.featured
-    @book = @books.sample
-    @rated = Book.high_rating
+    @books = Book.featured # this calls the featured books from the scope in book.rb
+    @book = @books.sample # this is the random sample of the featured books called above
+    @rated = Book.high_rating # all the highly rated books called from the scope
+    @most_reviewed = Book.most_reviews
     if @user
       @user = User.find(params[:user_id])
     end
