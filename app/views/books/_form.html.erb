@@ -10,5 +10,9 @@
   <%= f.label :rating %>
   <%= f.select :rating, [1, 2, 3, 4, 5]%>
   <hr>
+  <%= f.label :featured, "Featured" %>
+ <%= f.radio_button :featured, true %>
+ <%= f.label :notfeatured, "Not Featured" %>
+ <%= f.radio_button :featured, false %>
   <%= f.submit %>
 <% end %>

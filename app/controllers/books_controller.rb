@@ -1,8 +1,11 @@
 class BooksController < ApplicationController
   def index
     @books = Book.all
+    @user = User.find(params[:user_id])
     @azbooks = @books.sort_by {|obj| obj.title}
-    @datebooks = @books.sort_by {|obj| obj.date}
+    @datebooks = @books.sort_by {|obj| obj.created_at}
+    @featuredbooks = Book.featured
+    @notfeaturedbooks = Book.not_featured
   end
 
   def show
@@ -38,6 +41,7 @@ class BooksController < ApplicationController
   def update
     @book = Book.find(params[:id])
     if @book.update!(book_params)
+      # binding.pry
       flash[:notice] = "Joy! Your book was updated!"
       redirect_to book_path(@book)
     else

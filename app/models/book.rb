@@ -7,10 +7,14 @@ class Book < ActiveRecord::Base
   validates :rating, :presence => true
   before_save :convert_to_integer
 
-  # def self.sort_abc_by_title
-  #
-  #
-  # end
+  def self.featured
+    where(featured: true)
+  end
+
+  def self.not_featured
+    where(featured: false)
+  end
+
 
 private
   def convert_to_integer

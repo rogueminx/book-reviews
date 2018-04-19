@@ -1,9 +1,27 @@
 <h2>LIST OF BOOOOKS</h2>
 <hr>
-<%= link_to "Add new book", new_book_path %>
+<%= link_to "Add new book", new_user_book_path(@user) %>
 <hr>
-Add toggle to filter feature (az, date, etc.)
-<hr>
-<% @azbooks.each do |book| %>
-  <li><%= link_to book.title, book_path(book) %></li>
-<% end %>
+<div class="table">
+  <div class="row">
+    <div class="col-md-4">
+      <h2>Everything</h2>
+      <% @azbooks.each do |book| %>
+      <li><%= link_to book.title, book_path(book) %></li>
+      <% end %>
+    </div>
+    <div class="col-md-4">
+      <h2>Featured</h2>
+      <% @featuredbooks.each do |book| %>
+      <li><%= link_to book.title, book_path(book) %></li>
+      <% end %>
+    </div>
+    <div class="col-md-4">
+      <h2>Not-Featured :-(</h2>
+      <% @notfeaturedbooks.each do |book| %>
+      <li><%= link_to book.title, book_path(book) %></li>
+      <% end %>
+    </div>
+    </div>
+  </div>
+</div>
