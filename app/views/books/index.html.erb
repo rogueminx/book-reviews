@@ -1,8 +1,8 @@
 <h2>LIST OF BOOOOKS</h2>
 <hr>
-<%= link_to "Add new book", new_user_book_path(@user) %>
+<%= link_to "Add new book", new_book_path %>
 <hr>
 
 <% @books.each do |book| %>
-  <li><%= link_to book.title, user_book_path(@user, book) %></li>
+  <li><%= link_to book.title, book_path(book) %></li>
 <% end %>
